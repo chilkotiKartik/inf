@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 280 65% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+
+    /* Chart colors */
+    --chart-1: 217.2 91.2% 59.8%;
+    --chart-2: 280 65% 60%;
+    --chart-3: 120 65% 55%;
+    --chart-4: 35 91.2% 55.8%;
+    --chart-5: 0 91.2% 65.8%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Space theme styles */
+.font-space {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+.cosmic-bg {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.space-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.cosmic-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+}
+
+.cosmic-gradient-btn {
+  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-300;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+}
+
+.cosmic-glow {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Animation classes */
+.grid-animation {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staggered-animation:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.staggered-animation:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.staggered-animation:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Z-index layers */
+.z-space-bg {
+  z-index: 0;
+}
+
+.z-space-particles {
+  z-index: 1;
+}
+
+.z-main-content {
+  z-index: 10;
+}
+
+.z-floating-elements {
+  z-index: 20;
+}
+
+.z-header {
+  z-index: 50;
+}
+
+.z-notifications {
+  z-index: 60;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .glow-text {
+    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+  }
+}
